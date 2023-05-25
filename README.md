@@ -28,7 +28,7 @@
 
 # AWS Cloud Infrastructure [Not implemented yet]
 * APIs are deployed under AWS ECS
-* AWS Lambda(implemented using Python boto3) deployed to observe "Carrier Registration Details" page for availablity.
+* For Machine Learning/Batch Processing support, AWS Lambda(implemented using Python boto3) deployed to observe "Carrier Registration Details" page for availablity.
 * Lambda shall trigger AWS EMR to run batch processing. It can use SPOT EC2 instances to save COST
 
 # Fault Tolerence
@@ -37,7 +37,7 @@
 	2) Extract DOT numbers, and use light weight Kafka Consumer to read Carrier Registration Detail and store it in the Kafka TOPIC(S)
 	3) Above can be achived via Java code Document doc = Jsoup.connect("https://ai.fmcsa.dot.gov/SMS/Carrier/" + carrierId + "/CarrierRegistration.aspx").get();
 	4) Store Document as HTML text and do Scrape operation without need for USDOT site.
-	5) Another way to scrape is via execute scrape batch processing which can be done without need  of USDOT operation.
+	5) Another way to scrape is via execute scrape batch processing which can be done without need  of USDOT website.
 	6) It is highly recommended to run scrape operation during offline hours (like midnight) to avoid overloading USDOT site
 
 # Commands to run the application
