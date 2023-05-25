@@ -1,0 +1,18 @@
+How you will be evaluated
+Our goal is to see how you start to work and think through a problem like this, and expect to see
+something at the &quot;prototype stage.&quot; What we want to see is how you would develop an initial prototype
+and document it for other highly technical, data scientist/engineer colleagues. What design choices did
+(or would) you make, and why?
+Again, the scraper described here would take significantly more than 3 hours to “fully” complete. We do
+not expect a fully complete package, perfect code / perfectly documented code, or a complete database
+of all this scraped information.
+
+Design:
+
+Prototype Application is designed to support Synchronus and Asynchronus processing.
+
+API Gateway for real time scraping.
+Bulk processing for batch jobs
+Kafka Streaming support to avoid realtime hit to the website
+
+What you need?
