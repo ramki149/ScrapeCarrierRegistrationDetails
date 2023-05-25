@@ -59,4 +59,4 @@
 	C:\YOUR LOCAL FOLDER PATH\kafka_2.13-3.4.0\.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic census-cargo-topic
 	**Consume the topic:**
 	C:\YOUR LOCAL FOLDER PATH\kafka_2.13-3.4.0\.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic census-cargo-topic --from-beginning
-	[Type DOT number to PRODUCER] - This will call scraping API
+	**[Type DOT number to PRODUCER] - This will call scraping API**
