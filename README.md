@@ -39,3 +39,24 @@
 	4) Store Document as HTML text and do Scrape operation without need for USDOT site.
 	5) Another way to scrape is via execute scrape batch processing which can be done without need  of USDOT operation.
 	6) It is highly recommended to run scrape operation during offline hours (like midnight) to avoid overloading USDOT site
+
+# Commands to run the application
+* git clone https://github.com/ramki149/ScrapeCarrierRegistrationDetails
+* cd ScrapeCarrierRegistrationDetails
+* mvn clean compile install package
+* java -jar cargointerview-0.0.1-SNAPSHOT
+	[This starts the application at 8080. Sample http requests below]
+* To hit real time API http://localhost:8080/carrier/{DOT_number}  [ex. http://localhost:8080/carrier/1000357]
+* To begin batch processing, Push "Carrier Census Information" file contents to MotorCarrierCensusInformation.csv. Now call http://localhost:8080/executebatch
+* For Kafka streaming (optional)
+	**Zookeeper start:**
+	C:\YOUR LOCAL FOLDER PATH\kafka_2.13-3.4.0\.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+	**Server start**
+	C:\YOUR LOCAL FOLDER PATH\kafka_2.13-3.4.0\.\bin\windows\kafka-server-start.bat .\config\server.properties
+	**Create the Topic:**
+	C:\YOUR LOCAL FOLDER PATH\kafka_2.13-3.4.0\.\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:2181 --replication-factor 1 --partitions 1 --topic census-cargo-topic
+	**Produce the message**
+	C:\YOUR LOCAL FOLDER PATH\kafka_2.13-3.4.0\.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic census-cargo-topic
+	**Consume the topic:**
+	C:\YOUR LOCAL FOLDER PATH\kafka_2.13-3.4.0\.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic census-cargo-topic --from-beginning
+	[Type DOT number to PRODUCER] - This will call scraping API
