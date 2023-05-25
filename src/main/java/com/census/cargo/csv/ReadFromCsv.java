@@ -31,7 +31,7 @@ public class ReadFromCsv {
 			@Override
 			public void run() {
 				try {
-					CSVReader reader = new CSVReader(new FileReader("FMCSA_CENSUS1_2023Apr.csv"));
+					CSVReader reader = new CSVReader(new FileReader("MotorCarrierCensusInformation.csv"));
 					List<String[]> allRows = reader.readAll();
 					String[] dot_number_arr = new String[allRows.size()];
 					int index = 0;
