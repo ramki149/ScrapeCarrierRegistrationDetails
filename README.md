@@ -29,7 +29,8 @@
 # AWS Cloud Infrastructure [Not implemented yet]
 * APIs are deployed under AWS ECS
 * For Machine Learning/Batch Processing support, AWS Lambda(implemented using Python boto3) deployed to observe "Carrier Registration Details" page for availablity.
-* Lambda shall trigger AWS EMR to run batch processing. It can use SPOT EC2 instances to save COST
+* Lambda shall trigger AWS EMR to run batch processing. It can use SPOT EC2 instances to save COST.
+* Spark based AWS EMR shall run the scraping algoirthm https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-spark.html
 
 # Fault Tolerence
 * In order to handle the problem of USDOT site goes down, 
